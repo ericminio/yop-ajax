@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>yop-ajax.hello-world</title>
+    <meta name="description" content="An example of using yop-ajax">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    status: <span id="status"></span>
+    <br/>
+    data: <span id="data"></span>
+
+    <script src="yop-ajax.js"></script>
+    <script>
+        var yopAjax = new YopAjax(new XMLHttpRequest());
+        yopAjax.call("data.txt").then(function(data, status) {
+            document.querySelector('#status').innerHTML = status;
+            document.querySelector('#data').innerHTML = data;
+        });
+    </script>
+</body>
+</html>
